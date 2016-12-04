@@ -1,0 +1,41 @@
+{
+  "name": "tessella",
+  "version": "1.0.0",
+  "description": "Mapbox Vector Tiles Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony-async-await index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "license": "MIT",
+  "bin": {
+    "tessella": "./index.js"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": "7"
+  },
+  "keywords": [
+    "mapbox vector tiles",
+    "tile server",
+    "mbtiles"
+  ],
+  "dependencies": {
+    "kcors": "2.2.0",
+    "koa": "2.0.0-alpha.7",
+    "koa-compress": "2.0.0",
+    "koa-conditional-get": "2.0.0",
+    "koa-etag": "3.0.0",
+    "koa-logger": "2.0.0",
+    "koa-router": "7.0.1",
+    "mbtiles": "0.9.0",
+    "minimist": "1.2.0",
+    "tilelive": "5.12.2"
+  },
+  "devDependencies": {
+    "eslint": "3.11.1",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-plugin-import": "2.2.0"
+  }
+}
