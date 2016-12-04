@@ -25,6 +25,15 @@ npm install
 ## Usage
 
 ```shell
+Usage: tessella  [options] [filename]
+
+where [filename] is path to mbtiles data and [options] is any of:
+ --port - port to run on (default: 4000)
+ --socket - use Unix socket instead of port
+ --version - returns running version then exits
+```
+
+```shell
 tessella data.mbtiles
 ```
 

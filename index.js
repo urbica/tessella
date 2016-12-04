@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 const fs = require('fs');
 const minimist = require('minimist');
-const server = require('./src/server');
+const tessella = require('./src/server');
+const packagejson = require('./package.json');
 
 const config = minimist(process.argv.slice(2), {
   string: [
@@ -20,6 +22,28 @@ const config = minimist(process.argv.slice(2), {
   }
 });
 
+if (config.version) {
+  console.log(packagejson.version);
+  process.exit(0);
+}
+
+if (config.help) {
+  const usage = [
+    'Usage: tessella  [options] [filename]',
+    '',
+    'where [filename] is path to mbtiles data and [options] is any of:',
+    ` --port - port to run on (default: ${config.port})`,
+    ' --socket - use Unix socket instead of port',
+    ' --version - returns running version then exits',
+    '',
+    `tessella@${packagejson.version}`,
+    `node@${process.versions.node}`
+  ].join('\n');
+
+  console.log(usage);
+  process.exit(0);
+}
+
 try {
   config.tiles = config._[0];
   config.uri = `mbtiles://${config.tiles}`;
@@ -29,15 +53,22 @@ try {
   process.exit(-1);
 }
 
-const app = server(config);
-const http = app.listen(config.port, () => {
-  const endpoint = `${http.address().address}:${http.address().port}`;
-  process.stdout.write(`🚀  ON AIR @ ${endpoint}\n`);
+const app = tessella(config);
+const handler = config.socket || config.port;
+
+const server = app.listen(handler, () => {
+  if (config.socket) {
+    fs.chmodSync(config.socket, '1766');
+    console.log('🚀  ON AIR @ %s', config.socket);
+  } else {
+    const endpoint = `${server.address().address}:${server.address().port}`;
+    console.log('🚀  ON AIR @ %s', endpoint);
+  }
 });
 
 const shutdown = () => {
   process.stdout.write('Caught SIGINT, terminating');
-  http.close();
+  server.close();
   process.exit();
 };
 

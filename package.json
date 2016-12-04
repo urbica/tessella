@@ -1,6 +1,6 @@
 {
   "name": "tessella",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mapbox Vector Tiles Server",
   "main": "index.js",
   "scripts": {
