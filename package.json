@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node --harmony-async-await index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --harmony-async-await test/index.js"
   },
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "license": "MIT",
@@ -36,6 +36,8 @@
   "devDependencies": {
     "eslint": "3.11.1",
     "eslint-config-airbnb-base": "10.0.1",
-    "eslint-plugin-import": "2.2.0"
+    "eslint-plugin-import": "2.2.0",
+    "supertest-koa-agent": "0.3.0",
+    "tape": "4.6.3"
   }
 }

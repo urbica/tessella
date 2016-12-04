@@ -1,0 +1,25 @@
+language: node_js
+
+sudo: required
+
+branches:
+  except:
+    - /^v[0-9]/
+
+services:
+  - docker
+
+node_js:
+  - 7
+
+cache:
+  yarn: true
+
+install:
+  - npm install
+  - docker build -t tessella .
+  - docker run -d -p 127.0.0.1:4000:4000 -v $(pwd)/test/fixtures/plain_1.mbtiles:/usr/src/app/data.mbtiles --name tessella tessella
+
+script:
+  - npm test
+  - docker ps | grep -q tessella

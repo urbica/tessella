@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const minimist = require('minimist');
-const server = require('./server');
+const server = require('./src/server');
 
 const config = minimist(process.argv.slice(2), {
   string: [

@@ -1,4 +1,8 @@
-# Mapbox Vector Tiles Server
+# Tessella
+
+[![Build Status](https://travis-ci.org/urbica/tessela.svg?branch=master)](https://travis-ci.org/urbica/tessela)
+![docker pulls](https://img.shields.io/docker/pulls/urbica/tessela.svg)
+![docker stars](https://img.shields.io/docker/stars/urbica/tessela.svg)
 
 Tessella is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server.
 
@@ -35,6 +39,6 @@ Where `path` is path to your mbtiles file.
 ```shell
 docker run -d \
   -p 4000:4000 \
-  -v ./poi.mbtiles:/usr/src/app/data.mbtiles
+  -v $(pwd)/data.mbtiles:/usr/src/app/data.mbtiles \
   urbica/tessella
 ```
