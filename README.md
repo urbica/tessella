@@ -8,7 +8,7 @@ Tessella is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbo
 
 ## Installation
 
-Tessella depends on node version 7.
+Tessella requires node v7.6.0 or higher for ES2015 and async function support.
 
 ```shell
 npm install tessella -g

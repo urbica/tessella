@@ -1,11 +1,11 @@
 {
   "name": "tessella",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Mapbox Vector Tiles Server",
   "main": "index.js",
   "scripts": {
-    "start": "node --harmony-async-await index.js",
-    "test": "node --harmony-async-await test/index.js"
+    "start": "node index.js",
+    "test": "node test/index.js"
   },
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "license": "MIT",
