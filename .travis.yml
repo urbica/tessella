@@ -16,7 +16,7 @@ cache:
   yarn: true
 
 install:
-  - npm install
+  - yarn
   - docker build -t tessella .
   - docker run -d -p 127.0.0.1:4000:4000 -v $(pwd)/test/fixtures/plain_1.mbtiles:/usr/src/app/data.mbtiles --name tessella tessella
 

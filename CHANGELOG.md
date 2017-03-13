@@ -1,5 +1,9 @@
 ## Tessella changelog
 
+### 1.2.1
+
+- Dependency updates
+
 ### 1.2.0
 
 - Tessella requires node v7.6.0 or higher for async function support
