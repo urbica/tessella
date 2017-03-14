@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "kcors": "2.2.0",
-    "koa": "2.1.0",
+    "koa": "2.2.0",
     "koa-compress": "2.0.0",
     "koa-conditional-get": "2.0.0",
     "koa-etag": "3.0.0",
