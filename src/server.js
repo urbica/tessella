@@ -54,10 +54,13 @@ module.exports = (config) => {
   });
 
   router.get(tilePattern, async (ctx) => {
-    const { z, x, y } = ctx.params;
+    const z = parseInt(ctx.params.z, 10);
+    const x = parseInt(ctx.params.x, 10);
+    const y = parseInt(ctx.params.y, 10);
 
     try {
       const { tile, headers } = await getTile(ctx.state.source, z, x, y);
+
       ctx.set(headers);
       ctx.body = tile;
     } catch (error) {

@@ -1,6 +1,9 @@
-FROM node:7-onbuild
+FROM node:7.7-onbuild
 MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
+
+ENV NPM_CONFIG_COLOR=false
+ENV NPM_CONFIG_LOGLEVEL=warn
 
 EXPOSE 4000
 ENTRYPOINT ["npm", "start", "--"]
-CMD ["data.mbtiles"]
+CMD ["./data.mbtiles"]
