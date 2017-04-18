@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@mapbox/tilelive@5.12.4":
+  version "5.12.4"
+  resolved "https://registry.yarnpkg.com/@mapbox/tilelive/-/tilelive-5.12.4.tgz#0a05a846c352da4d48e5d441825367e724d55638"
+  dependencies:
+    minimist "~0.2.0"
+    progress-stream "~0.5.x"
+    queue-async "~1.0.7"
+    sphericalmercator "~1.0.1"
+
 abbrev@1:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"

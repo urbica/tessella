@@ -1,6 +1,6 @@
 {
   "name": "tessella",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Mapbox Vector Tiles Server",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "mbtiles"
   ],
   "dependencies": {
+    "@mapbox/tilelive": "5.12.4",
     "kcors": "2.2.0",
     "koa": "2.2.0",
     "koa-compress": "2.0.0",
@@ -30,8 +31,7 @@
     "koa-logger": "2.0.1",
     "koa-router": "7.1.1",
     "mbtiles": "0.9.0",
-    "minimist": "1.2.0",
-    "tilelive": "5.12.3"
+    "minimist": "1.2.0"
   },
   "devDependencies": {
     "eslint": "3.19.0",

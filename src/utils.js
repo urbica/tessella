@@ -1,5 +1,5 @@
 const mbtiles = require('mbtiles');
-const tilelive = require('tilelive');
+const tilelive = require('@mapbox/tilelive');
 
 mbtiles.registerProtocols(tilelive);
 
