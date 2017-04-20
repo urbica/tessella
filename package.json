@@ -22,7 +22,7 @@
     "mbtiles"
   ],
   "dependencies": {
-    "@mapbox/tilelive": "5.12.4",
+    "@mapbox/tilelive": "5.12.6",
     "kcors": "2.2.0",
     "koa": "2.2.0",
     "koa-compress": "2.0.0",

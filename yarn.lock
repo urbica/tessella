@@ -2,14 +2,18 @@
 # yarn lockfile v1
 
 
-"@mapbox/tilelive@5.12.4":
-  version "5.12.4"
-  resolved "https://registry.yarnpkg.com/@mapbox/tilelive/-/tilelive-5.12.4.tgz#0a05a846c352da4d48e5d441825367e724d55638"
+"@mapbox/sphericalmercator@~1.0.1":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@mapbox/sphericalmercator/-/sphericalmercator-1.0.5.tgz#70237b9774095ed1cfdbcea7a8fd1fc82b2691f2"
+
+"@mapbox/tilelive@5.12.6":
+  version "5.12.6"
+  resolved "https://registry.yarnpkg.com/@mapbox/tilelive/-/tilelive-5.12.6.tgz#00b3efe0b999e8307bc1cc099cb770da7676690b"
   dependencies:
+    "@mapbox/sphericalmercator" "~1.0.1"
     minimist "~0.2.0"
     progress-stream "~0.5.x"
     queue-async "~1.0.7"
-    sphericalmercator "~1.0.1"
 
 abbrev@1:
   version "1.0.9"
@@ -1777,15 +1781,6 @@ through2@~0.2.3:
 through@^2.3.6, through@~2.3.4, through@~2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
-
-tilelive@5.12.3:
-  version "5.12.3"
-  resolved "https://registry.yarnpkg.com/tilelive/-/tilelive-5.12.3.tgz#9c8c770e1194aa8d353d9a1d03147404307cdebd"
-  dependencies:
-    minimist "~0.2.0"
-    progress-stream "~0.5.x"
-    queue-async "~1.0.7"
-    sphericalmercator "~1.0.1"
 
 tiletype@0.1.x:
   version "0.1.0"
