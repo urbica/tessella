@@ -49,7 +49,7 @@ module.exports = (config) => {
 
     ctx.body = Object.assign({}, ctx.state.metadata, {
       tiles: [url],
-      tilejson: '2.0.0'
+      tilejson: '2.2.0'
     });
   });
 
