@@ -5,11 +5,11 @@
 ![docker stars](https://img.shields.io/docker/stars/urbica/tessella.svg)
 
 tessella is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server.
+Inspired by [tessera](https://github.com/mojodna/tessera).
 
 ## Installation
 
-Tessella requires node v7.6.0 or higher for ES2015 and async function support.
-Inspired by [tessera](https://github.com/mojodna/tessera).
+tessella requires node v7.6.0 or higher for ES2015 and async function support.
 
 ```shell
 npm install tessella -g

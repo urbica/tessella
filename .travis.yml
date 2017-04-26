@@ -12,6 +12,7 @@ cache:
 
 install:
   - yarn
+  - yarn add mbtiles
 
 script:
   - npm test
