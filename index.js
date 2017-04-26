@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 
 const fs = require('fs');
 const minimist = require('minimist');
@@ -23,15 +22,15 @@ const config = minimist(process.argv.slice(2), {
 });
 
 if (config.version) {
-  console.log(packagejson.version);
+  process.stdout.write(`${packagejson.version}\n`);
   process.exit(0);
 }
 
-if (config.help) {
+const help = () => {
   const usage = [
-    'Usage: tessella  [options] [filename]',
+    'Usage: tessella [options] [uri]',
     '',
-    'where [filename] is path to mbtiles data and [options] is any of:',
+    'where [uri] is tilelive URI to serve and [options] is any of:',
     ` --port - port to run on (default: ${config.port})`,
     ' --socket - use Unix socket instead of port',
     ' --version - returns running version then exits',
@@ -40,34 +39,35 @@ if (config.help) {
     `node@${process.versions.node}`
   ].join('\n');
 
-  console.log(usage);
+  process.stdout.write(`${usage}\n`);
   process.exit(0);
+};
+
+if (config.help) {
+  help();
 }
 
-try {
-  config.tiles = config._[0];
-  config.uri = `mbtiles://${config.tiles}`;
-  fs.accessSync(config.tiles, fs.F_OK);
-} catch (error) {
-  process.stderr.write(error.stack);
-  process.exit(-1);
+if (!config._[0]) {
+  process.stdout.write('URI not specified.\n\n');
+  help();
 }
 
+config.uri = config._[0];
 const app = tessella(config);
 const handler = config.socket || config.port;
 
 const server = app.listen(handler, () => {
   if (config.socket) {
     fs.chmodSync(config.socket, '1766');
-    console.log('🚀  ON AIR @ %s', config.socket);
+    process.stdout.write(`🚀  ON AIR @ ${config.socket}`);
   } else {
     const endpoint = `${server.address().address}:${server.address().port}`;
-    console.log('🚀  ON AIR @ %s', endpoint);
+    process.stdout.write(`🚀  ON AIR @ ${endpoint}`);
   }
 });
 
 const shutdown = () => {
-  process.stdout.write('Caught SIGINT, terminating');
+  process.stdout.write('Caught SIGINT, terminating\n');
   server.close();
   process.exit();
 };

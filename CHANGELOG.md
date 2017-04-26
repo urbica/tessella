@@ -1,4 +1,8 @@
-## Tessella changelog
+## Changelog
+
+### 2.0.0
+
+- Add [tilelive-modules](https://github.com/mojodna/tilelive-modules) support
 
 ### 1.2.1
 

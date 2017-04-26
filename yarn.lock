@@ -1782,6 +1782,10 @@ through@^2.3.6, through@~2.3.4, through@~2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
+tilelive-modules@0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.3.3.tgz#1d22c57aecc8db124bfdafd814f22cfc6b9e9055"
+
 tiletype@0.1.x:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/tiletype/-/tiletype-0.1.0.tgz#0b9ca654f8c0a7ccccd920edf594d3ee9489c297"

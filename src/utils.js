@@ -1,7 +1,7 @@
-const mbtiles = require('mbtiles');
 const tilelive = require('@mapbox/tilelive');
+const loader = require('tilelive-modules/loader');
 
-mbtiles.registerProtocols(tilelive);
+loader(tilelive);
 
 const info = uri =>
   new Promise((resolve, reject) =>
