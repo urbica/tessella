@@ -2,13 +2,20 @@
   "name": "tessella",
   "version": "2.0.0",
   "description": "Mapbox Vector Tiles Server",
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version",
     "start": "node index.js",
     "test": "node test/index.js"
   },
-  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
-  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "bin": {
     "tessella": "./index.js"
   },
@@ -35,9 +42,12 @@
     "tilelive-modules": "0.3.3"
   },
   "devDependencies": {
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.2.0",
     "eslint-plugin-import": "2.3.0",
+    "standard-version": "4.0.0",
     "supertest-koa-agent": "0.3.0",
     "tape": "4.6.3"
   }
