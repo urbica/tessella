@@ -29,15 +29,15 @@
     "koa-compress": "2.0.0",
     "koa-conditional-get": "2.0.0",
     "koa-etag": "3.0.0",
-    "koa-logger": "2.0.1",
-    "koa-router": "7.1.1",
+    "koa-logger": "3.0.0",
+    "koa-router": "7.2.0",
     "minimist": "1.2.0",
     "tilelive-modules": "0.3.3"
   },
   "devDependencies": {
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.2.0",
-    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-import": "2.3.0",
     "supertest-koa-agent": "0.3.0",
     "tape": "4.6.3"
   }
