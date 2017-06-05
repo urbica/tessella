@@ -1,4 +1,4 @@
-FROM node:7.9-onbuild
+FROM node:8-onbuild
 MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
 
 ENV NPM_CONFIG_COLOR=false
