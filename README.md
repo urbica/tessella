@@ -1,8 +1,9 @@
 # tessella
 
-[![Build Status](https://travis-ci.org/urbica/tessella.svg?branch=master)](https://travis-ci.org/urbica/tessella)
+[![npm version](https://img.shields.io/npm/v/tessella.svg)](https://www.npmjs.com/package/tessella)
+[![npm downloads](https://img.shields.io/npm/dt/tessella.svg)](https://www.npmjs.com/package/tessella)
+[![build status](https://travis-ci.org/urbica/tessella.svg?branch=master)](https://travis-ci.org/urbica/tessella)
 ![docker pulls](https://img.shields.io/docker/pulls/urbica/tessella.svg)
-![docker stars](https://img.shields.io/docker/stars/urbica/tessella.svg)
 
 tessella is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server.
 Inspired by [tessera](https://github.com/mojodna/tessera).
