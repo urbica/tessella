@@ -5,6 +5,10 @@
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "license": "MIT",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/urbica/tessella.git"
+  },
   "scripts": {
     "commit": "git-cz",
     "release": "standard-version",
@@ -32,22 +36,22 @@
   "dependencies": {
     "@mapbox/tilelive": "5.12.6",
     "kcors": "2.2.1",
-    "koa": "2.2.0",
+    "koa": "2.3.0",
     "koa-compress": "2.0.0",
     "koa-conditional-get": "2.0.0",
     "koa-etag": "3.0.0",
     "koa-logger": "3.0.0",
-    "koa-router": "7.2.0",
+    "koa-router": "7.2.1",
     "minimist": "1.2.0",
-    "tilelive-modules": "0.3.3"
+    "tilelive-modules": "0.3.4"
   },
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.2.0",
-    "eslint-plugin-import": "2.3.0",
-    "standard-version": "4.0.0",
+    "eslint-plugin-import": "2.6.0",
+    "standard-version": "4.2.0",
     "supertest-koa-agent": "0.3.0",
     "tape": "4.6.3"
   }
