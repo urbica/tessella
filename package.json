@@ -1,6 +1,6 @@
 {
   "name": "tessella",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Mapbox Vector Tiles Server",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "license": "MIT",
