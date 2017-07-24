@@ -6,10 +6,7 @@ const tessella = require('./src/server');
 const packagejson = require('./package.json');
 
 const config = minimist(process.argv.slice(2), {
-  string: [
-    'port',
-    'socket'
-  ],
+  string: ['port', 'socket', 'cacheSize', 'sourceCacheSize'],
   boolean: ['cors'],
   alias: {
     h: 'help',
@@ -17,7 +14,9 @@ const config = minimist(process.argv.slice(2), {
   },
   default: {
     cors: true,
-    port: 4000
+    port: 4000,
+    cacheSize: '10',
+    sourceCacheSize: 6
   }
 });
 
@@ -27,17 +26,19 @@ if (config.version) {
 }
 
 const help = () => {
-  const usage = [
-    'Usage: tessella [options] [uri]',
-    '',
-    'where [uri] is tilelive URI to serve and [options] is any of:',
-    ` --port - port to run on (default: ${config.port})`,
-    ' --socket - use Unix socket instead of port',
-    ' --version - returns running version then exits',
-    '',
-    `tessella@${packagejson.version}`,
-    `node@${process.versions.node}`
-  ].join('\n');
+  const usage = `
+    Usage: tessella [options] [uri]
+
+    where [uri] is tilelive URI to serve and [options] is any of:
+      --port - port to run on (default: ${config.port})
+      --socket - use Unix socket instead of port
+      --cacheSize - cache size in MB (default: ${config.cacheSize})
+      --sourceCacheSize - source cache size in # of sources (default: ${config.sourceCacheSize})
+      --version - returns running version then exits
+
+    tessella@${packagejson.version}
+    node@${process.versions.node}
+  `;
 
   process.stdout.write(`${usage}\n`);
   process.exit(0);

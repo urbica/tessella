@@ -5,7 +5,7 @@ const etag = require('koa-etag');
 const Koa = require('koa');
 const logger = require('koa-logger');
 const Router = require('koa-router');
-const { info, load, getTile } = require('./utils.js');
+const utils = require('./utils.js');
 
 const tilePath = '/{z}/{x}/{y}.{format}';
 const tilePattern = tilePath
@@ -17,6 +17,8 @@ const tilePattern = tilePath
 module.exports = (config) => {
   const app = new Koa();
   const router = Router();
+  const { info, load, getTile } = utils(config);
+
   let source;
   let metadata;
 

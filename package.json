@@ -44,6 +44,7 @@
     "koa-logger": "3.0.1",
     "koa-router": "7.2.1",
     "minimist": "1.2.0",
+    "tilelive-cache": "0.7.1",
     "tilelive-modules": "0.3.4"
   },
   "devDependencies": {

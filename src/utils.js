@@ -1,30 +1,38 @@
-const tilelive = require('@mapbox/tilelive');
+const cache = require('tilelive-cache');
 const loader = require('tilelive-modules/loader');
+const tilelive = require('@mapbox/tilelive');
 
-loader(tilelive);
+module.exports = (config) => {
+  const tileliveCache = cache(tilelive, {
+    size: process.env.CACHE_SIZE || config.cacheSize,
+    sources: process.env.SOURCE_CACHE_SIZE || config.sourceCacheSize
+  });
 
-const info = uri =>
-  new Promise((resolve, reject) =>
-    tilelive.info(uri, (error, metadata) => {
-      if (error) reject(error);
-      resolve(metadata);
-    })
-  );
+  loader(tileliveCache);
 
-const load = uri =>
-  new Promise((resolve, reject) =>
-    tilelive.load(uri, (error, source) => {
-      if (error) reject(error);
-      resolve(source);
-    })
-  );
+  const info = uri =>
+    new Promise((resolve, reject) =>
+      tileliveCache.info(uri, (error, metadata) => {
+        if (error) reject(error);
+        resolve(metadata);
+      })
+    );
 
-const getTile = (source, z, x, y) =>
-  new Promise((resolve, reject) =>
-    source.getTile(z, x, y, (error, tile, headers) => {
-      if (error) reject(error);
-      resolve({ headers, tile });
-    })
-  );
+  const load = uri =>
+    new Promise((resolve, reject) =>
+      tileliveCache.load(uri, (error, source) => {
+        if (error) reject(error);
+        resolve(source);
+      })
+    );
 
-module.exports = { info, load, getTile };
+  const getTile = (source, z, x, y) =>
+    new Promise((resolve, reject) =>
+      source.getTile(z, x, y, (error, tile, headers) => {
+        if (error) reject(error);
+        resolve({ headers, tile });
+      })
+    );
+
+  return { info, load, getTile };
+};
