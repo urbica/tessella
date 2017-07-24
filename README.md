@@ -22,7 +22,7 @@ npm install -g <tilelive modules...>
 ```shell
 git clone https://github.com/urbica/tessella.git
 cd tessella
-yarn
+npm i
 ```
 
 ## Usage
@@ -30,10 +30,12 @@ yarn
 ```shell
 Usage: tessella [options] [URI]
 
-where [URI] is is tilelive URI to serve and [options] is any of:
- --port - port to run on (default: 4000)
- --socket - use Unix socket instead of port
- --version - returns running version then exits
+where [uri] is tilelive URI to serve and [options] is any of:
+  --port - port to run on (default: 4000)
+  --socket - use Unix socket instead of port
+  --cacheSize - cache size in MB (default: 10)
+  --sourceCacheSize - source cache size in # of sources (default: 6)
+  --version - returns running version then exits
 ```
 
 ### Examples
