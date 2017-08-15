@@ -1,3 +1,4 @@
+const url = require('url');
 const compress = require('koa-compress');
 const conditional = require('koa-conditional-get');
 const cors = require('kcors');
@@ -7,8 +8,11 @@ const logger = require('koa-logger');
 const Router = require('koa-router');
 const utils = require('./utils.js');
 
+const scales = [1, 2];
 const tilePath = '/{z}/{x}/{y}.{format}';
 const tilePattern = tilePath
+  .replace(/\.(?!.*\.)/, `:scale(@[${scales.join('')}]x)?.`)
+  .replace(/\./g, '.')
   .replace('{z}', ':z(\\d+)')
   .replace('{x}', ':x(\\d+)')
   .replace('{y}', ':y(\\d+)')
@@ -19,8 +23,20 @@ module.exports = (config) => {
   const router = Router();
   const { info, load, getTile } = utils(config);
 
-  let source;
+  const urisByScale = scales.reduce((acc, scale) => {
+    const uri = url.parse(config.uri, true);
+    uri.query.scale = scale;
+    uri.query.tileSize = scale * 256;
+
+    // warm the cache
+    load(uri);
+
+    acc[scale] = uri;
+    return acc;
+  }, {});
+
   let metadata;
+  const sourcesByScale = {};
 
   if (config.cors) app.use(cors());
   app.use(compress());
@@ -38,19 +54,20 @@ module.exports = (config) => {
     }
   });
 
-  app.use(async (ctx, next) => {
-    ctx.state.source = source || (source = await load(config.uri));
-    ctx.state.metadata = metadata || (metadata = await info(config.uri));
-    return next();
-  });
-
   router.get('/index.json', async (ctx) => {
-    const { format } = ctx.state.metadata;
-    const baseUrl = `${ctx.protocol}://${ctx.host}`;
-    const url = baseUrl + tilePath.replace('{format}', format).replace(/\/+/g, '/');
+    if (!metadata) {
+      metadata = await info(config.uri);
+    }
 
-    ctx.body = Object.assign({}, ctx.state.metadata, {
-      tiles: [url],
+    const { format } = metadata;
+    const tilesUrl = url.format({
+      protocol: ctx.protocol,
+      host: ctx.host,
+      pathname: tilePath.replace('{format}', format).replace(/\/+/g, '/')
+    });
+
+    ctx.body = Object.assign({}, metadata, {
+      tiles: [tilesUrl],
       tilejson: '2.2.0'
     });
   });
@@ -59,9 +76,16 @@ module.exports = (config) => {
     const z = parseInt(ctx.params.z, 10);
     const x = parseInt(ctx.params.x, 10);
     const y = parseInt(ctx.params.y, 10);
+    const scale = (ctx.params.scale || '@1x').slice(1, 2) | 0;
+
+    let source = sourcesByScale[scale];
+    if (!source) {
+      source = await load(urisByScale[scale]);
+      sourcesByScale[scale] = source;
+    }
 
     try {
-      const { tile, headers } = await getTile(ctx.state.source, z, x, y);
+      const { tile, headers } = await getTile(source, z, x, y);
 
       ctx.set(headers);
       ctx.body = tile;

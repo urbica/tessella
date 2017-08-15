@@ -9,6 +9,7 @@
   },
   "rules": {
     "comma-dangle": ["error", "never"],
+    "no-bitwise": ["error", { "int32Hint": true }],
     "no-param-reassign": ["error", { "props": false }]
   }
 }
