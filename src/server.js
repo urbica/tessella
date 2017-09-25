@@ -1,4 +1,5 @@
 const url = require('url');
+const path = require('path');
 const compress = require('koa-compress');
 const conditional = require('koa-conditional-get');
 const cors = require('kcors');
@@ -60,11 +61,16 @@ module.exports = (config) => {
     }
 
     const { format } = metadata;
-    const tilesUrl = url.format({
-      protocol: ctx.protocol,
-      host: ctx.host,
-      pathname: tilePath.replace('{format}', format).replace(/\/+/g, '/')
-    });
+    const protocol = ctx.headers['x-forwarded-proto'] || ctx.protocol;
+    const host = ctx.headers['x-forwarded-host'] || ctx.headers.host;
+    const originalUrl = ctx.headers['x-rewrite-url'] || ctx.originalUrl;
+
+    const pathname = path.join(
+      path.dirname(originalUrl),
+      tilePath.replace('{format}', format).replace(/\/+/g, '/')
+    );
+
+    const tilesUrl = url.format({ protocol, host, pathname });
 
     ctx.body = Object.assign({}, metadata, {
       tiles: [tilesUrl],
