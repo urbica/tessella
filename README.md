@@ -1,5 +1,7 @@
 # tessella
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/urbica/tessella.svg)](https://greenkeeper.io/)
+
 [![npm version](https://img.shields.io/npm/v/tessella.svg)](https://www.npmjs.com/package/tessella)
 [![npm downloads](https://img.shields.io/npm/dt/tessella.svg)](https://www.npmjs.com/package/tessella)
 [![build status](https://travis-ci.org/urbica/tessella.svg?branch=master)](https://travis-ci.org/urbica/tessella)
