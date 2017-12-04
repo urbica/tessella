@@ -1,10 +1,9 @@
 # tessella
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/urbica/tessella.svg)](https://greenkeeper.io/)
-
 [![npm version](https://img.shields.io/npm/v/tessella.svg)](https://www.npmjs.com/package/tessella)
 [![npm downloads](https://img.shields.io/npm/dt/tessella.svg)](https://www.npmjs.com/package/tessella)
 [![build status](https://travis-ci.org/urbica/tessella.svg?branch=master)](https://travis-ci.org/urbica/tessella)
+[![Greenkeeper badge](https://badges.greenkeeper.io/urbica/tessella.svg)](https://greenkeeper.io/)
 ![docker pulls](https://img.shields.io/docker/pulls/urbica/tessella.svg)
 
 tessella is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server.
