@@ -35,7 +35,7 @@
     "postgis"
   ],
   "dependencies": {
-    "@mapbox/tilelive": "5.12.6",
+    "@mapbox/tilelive": "6.0.0",
     "kcors": "2.2.1",
     "koa": "2.4.1",
     "koa-compress": "2.0.0",
