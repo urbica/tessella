@@ -53,7 +53,7 @@
     "eslint": "4.13.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
-    "standard-version": "4.2.0",
+    "standard-version": "4.3.0",
     "supertest-koa-agent": "0.3.0",
     "tape": "4.8.0"
   }
