@@ -35,26 +35,27 @@
     "postgis"
   ],
   "dependencies": {
-    "@mapbox/tilelive": "5.12.6",
-    "kcors": "2.2.1",
-    "koa": "2.4.1",
-    "koa-compress": "2.0.0",
-    "koa-conditional-get": "2.0.0",
-    "koa-etag": "3.0.0",
-    "koa-logger": "3.1.0",
-    "koa-router": "7.3.0",
-    "minimist": "1.2.0",
-    "tilelive-cache": "0.7.1",
-    "tilelive-modules": "0.4.0"
+    "@mapbox/tilelive": "^6.0.0",
+    "kcors": "^2.2.1",
+    "koa": "^2.4.1",
+    "koa-compress": "^2.0.0",
+    "koa-conditional-get": "^2.0.0",
+    "koa-etag": "^3.0.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "minimist": "^1.2.0",
+    "tilelive-cache": "^0.7.1",
+    "tilelive-modules": "^0.4.0"
   },
   "devDependencies": {
-    "commitizen": "2.9.6",
-    "cz-conventional-changelog": "2.1.0",
-    "eslint": "4.13.1",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-import": "2.8.0",
-    "standard-version": "4.2.0",
-    "supertest-koa-agent": "0.3.0",
-    "tape": "4.8.0"
+    "@mapbox/mbtiles": "^0.9.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "standard-version": "^4.2.0",
+    "supertest-koa-agent": "^0.3.0",
+    "tape": "^4.8.0"
   }
 }
