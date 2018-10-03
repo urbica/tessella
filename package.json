@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@mapbox/mbtiles": "^0.9.0",
-    "commitizen": "^2.10.1",
+    "commitizen": "^3.0.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^13.0.0",
