@@ -1,15 +1,30 @@
 {
-  "extends": "airbnb-base",
-  "plugins": [
-    "import"
-  ],
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["import"],
   "env": {
     "es6": true,
     "node": true
   },
   "rules": {
+    "arrow-parens": [
+      "warn",
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
     "comma-dangle": ["error", "never"],
+    "function-paren-newline": ["error", "consistent"],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true
+      }
+    ],
     "no-bitwise": ["error", { "int32Hint": true }],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "quotes": ["error", "single"]
   }
 }
