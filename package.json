@@ -37,7 +37,7 @@
   "dependencies": {
     "@mapbox/tilelive": "^6.0.0",
     "kcors": "^2.2.2",
-    "koa": "^2.6.2",
+    "koa": "^2.7.0",
     "koa-compress": "^3.0.0",
     "koa-conditional-get": "^2.0.0",
     "koa-etag": "^3.0.0",
@@ -45,20 +45,20 @@
     "koa-router": "^7.4.0",
     "minimist": "^1.2.0",
     "tilelive-cache": "^0.7.1",
-    "tilelive-modules": "^0.4.1"
+    "tilelive-modules": "^0.4.2"
   },
   "devDependencies": {
     "@mapbox/mbtiles": "^0.10.0",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.9.0",
+    "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
-    "prettier": "^1.15.2",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2",
     "standard-version": "^4.4.0",
-    "supertest-koa-agent": "^0.3.0",
-    "tape": "^4.9.1"
+    "supertest-koa-agent": "^0.3.2",
+    "tape": "^4.10.0"
   }
 }
