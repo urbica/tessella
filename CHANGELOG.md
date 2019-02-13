@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.2"></a>
+## [2.3.2](https://github.com/urbica/tessella/compare/v2.3.1...v2.3.2) (2019-02-13)
+
+
+
 <a name="2.3.1"></a>
 ## [2.3.1](https://github.com/urbica/tessella/compare/v2.3.0...v2.3.1) (2018-01-09)
 
