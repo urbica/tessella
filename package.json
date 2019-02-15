@@ -57,7 +57,7 @@
     "eslint-plugin-import": "^2.16.0",
     "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2",
-    "standard-version": "^4.4.0",
+    "standard-version": "^5.0.0",
     "supertest-koa-agent": "^0.3.2",
     "tape": "^4.10.0"
   }
