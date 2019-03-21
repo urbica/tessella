@@ -33,7 +33,9 @@ const help = () => {
       --port - port to run on (default: ${config.port})
       --socket - use Unix socket instead of port
       --cacheSize - cache size in MB (default: ${config.cacheSize})
-      --sourceCacheSize - source cache size in # of sources (default: ${config.sourceCacheSize})
+      --sourceCacheSize - source cache size in # of sources (default: ${
+        config.sourceCacheSize
+      })
       --version - returns running version then exits
 
     tessella@${packagejson.version}
