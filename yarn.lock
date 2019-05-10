@@ -18,14 +18,14 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@mapbox/mbtiles@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@mapbox/mbtiles/-/mbtiles-0.10.0.tgz#630549e8eb23e33c412de4bf4bf8b605da38c6bd"
-  integrity sha512-U86xMaUOlBKUt6W92twIE03nsXesPY0TtpSOA7SRMFkKx+mw5HKY38V6fLuo+c6NRSyXaQIAo1X2IsnwVK5B9w==
+"@mapbox/mbtiles@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/mbtiles/-/mbtiles-0.11.0.tgz#c42eaea5457c76ae43cd7e448c5c9f11d81f4de3"
+  integrity sha512-6eQVpgMG3lRMgptVfETiOGZI76SC3UCPOO4hoyHDyZVd20mRrS6Ncbr7ZAdIgSyfqCsI9pnvD+ZpeBzKSgpg6w==
   dependencies:
     "@mapbox/sphericalmercator" "~1.1.0"
     "@mapbox/tiletype" "0.3.x"
-    d3-queue "~2.0.3"
+    d3-queue "~3.0.7"
     sqlite3 "4.x"
 
 "@mapbox/sphericalmercator@^1.0.2", "@mapbox/sphericalmercator@~1.0.1":
@@ -876,9 +876,10 @@ cz-conventional-changelog@2.1.0, cz-conventional-changelog@^2.1.0:
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
 
-d3-queue@~2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/d3-queue/-/d3-queue-2.0.3.tgz#07fbda3acae5358a9c5299aaf880adf0953ed2c2"
+d3-queue@~3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/d3-queue/-/d3-queue-3.0.7.tgz#c93a2e54b417c0959129d7d73f6cf7d4292e7618"
+  integrity sha1-yTouVLQXwJWRKdfXP2z31Ckudhg=
 
 dargs@^4.0.1:
   version "4.1.0"
