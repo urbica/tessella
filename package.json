@@ -14,7 +14,9 @@
     "release": "standard-version",
     "lint": "eslint src test",
     "start": "node index.js",
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "config": {
     "commitizen": {
@@ -45,7 +47,8 @@
     "koa-router": "^7.4.0",
     "minimist": "^1.2.0",
     "tilelive-cache": "^0.7.1",
-    "tilelive-modules": "^0.4.2"
+    "tilelive-modules": "^0.4.2",
+    "snyk": "^1.177.0"
   },
   "devDependencies": {
     "@mapbox/mbtiles": "^0.11.0",
@@ -60,5 +63,6 @@
     "standard-version": "^6.0.1",
     "supertest-koa-agent": "^0.3.2",
     "tape": "^4.10.1"
-  }
+  },
+  "snyk": true
 }
