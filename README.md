@@ -57,15 +57,17 @@ tessella postgis://localhost/test?table=tableName&geometry_field=geom
 ## Using with Leaflet
 
 ```js
-const map = L.map('map').setView([0, 0], 0);
-L.tileLayer('http://localhost:4000/{z}/{x}/{y}.png').addTo(map);
+const map = L.map("map").setView([0, 0], 0);
+L.tileLayer("http://localhost:4000/{z}/{x}/{y}.png").addTo(map);
 ```
 
 with retina support:
 
 ```js
-const map = L.map('map').setView([0, 0], 0);
-L.tileLayer('http://localhost:4000/{z}/{x}/{y}{r}.png').addTo(map, { detectRetina: true });
+const map = L.map("map").setView([0, 0], 0);
+L.tileLayer("http://localhost:4000/{z}/{x}/{y}{r}.png").addTo(map, {
+  detectRetina: true
+});
 ```
 
 ## Using with Docker
