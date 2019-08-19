@@ -5,23 +5,16 @@ branches:
     - /^v[0-9]/
 
 node_js:
-  - 8
+  - "8"
+  - "10"
 
 cache:
   yarn: true
-
-before_install:
-  - yarn global add greenkeeper-lockfile@1
 
 install:
   - yarn
   - yarn add mbtiles
 
-before_script:
-  - greenkeeper-lockfile-update
-
 script:
+  - yarn lint
   - yarn test
-
-after_script:
-  - greenkeeper-lockfile-upload

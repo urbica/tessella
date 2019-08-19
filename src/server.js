@@ -71,11 +71,7 @@ module.exports = (config) => {
     );
 
     const tilesUrl = url.format({ protocol, host, pathname });
-
-    ctx.body = Object.assign({}, metadata, {
-      tiles: [tilesUrl],
-      tilejson: '2.2.0'
-    });
+    ctx.body = { ...metadata, tiles: [tilesUrl], tilejson: '2.2.0' };
   });
 
   router.get(tilePattern, async (ctx) => {
