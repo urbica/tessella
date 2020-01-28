@@ -43,7 +43,7 @@ where [uri] is tilelive URI to serve and [options] is any of:
 MBTiles
 
 ```shell
-npm install -g mbtiles
+npm install -g @mapbox/mbtiles
 tessella mbtiles://./whatever.mbtiles
 ```
 
