@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.3.3](https://github.com/urbica/tessella/compare/v2.3.2...v2.3.3) (2020-06-03)
+
+
+### Bug Fixes
+
+* package.json to reduce vulnerabilities ([9cc562a](https://github.com/urbica/tessella/commit/9cc562aaf54e3b15557a721d359890331c9a3024))
 
 <a name="2.3.2"></a>
 ## [2.3.2](https://github.com/urbica/tessella/compare/v2.3.1...v2.3.2) (2019-02-13)
